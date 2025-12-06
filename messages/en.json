@@ -1,0 +1,317 @@
+{
+  "meta": {
+    "title": "Black Label Auto Detailing",
+    "description": "Premium mobile and studio auto detailing with paint correction, ceramic coatings, and concierge care for luxury vehicles."
+  },
+  "nav": {
+    "hero": "Home",
+    "services": "Services",
+    "pricing": "Pricing",
+    "brands": "Brands",
+    "gallery": "Before & After",
+    "reviews": "Reviews",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "book": "Book Now",
+    "quote": "Get a Quote"
+  },
+  "hero": {
+    "eyebrow": "Luxury Auto Detailing",
+    "title": "Concierge Detailing for Obsessive Owners",
+    "subtitle": "Studio-grade correction, ceramic coatings, and meticulous interiors. Mobile-ready with climate-controlled studio availability.",
+    "ctaPrimary": "Book Now",
+    "ctaSecondary": "Get a Quote",
+    "bullets": [
+      "Certified paint correction & coatings",
+      "Touchless wash philosophy",
+      "Discreet concierge pickup"
+    ],
+    "videoPlaceholder": "Background reel placeholder"
+  },
+  "about": {
+    "title": "Crafted by perfectionists",
+    "body": "We deliver concours-level finishes with transparent process, premium chemistry, and obsessive care. Every detail is documented and verified under calibrated lighting.",
+    "mission": "Our mission is simple: preserve and elevate every surface of your vehicle while making the experience effortless and transparent.",
+    "stats": [
+      { "label": "Years perfecting finishes", "value": "+12" },
+      { "label": "Vehicles detailed", "value": "4,500+" },
+      { "label": "Five-star reviews", "value": "1,200+" }
+    ]
+  },
+  "services": {
+    "title": "Signature services",
+    "subtitle": "Precision exterior, interior, and protective treatments tailored to your vehicle and driving style.",
+    "cards": {
+      "exterior": {
+        "title": "Exterior Detailing",
+        "description": "Paint-safe wash, decontamination, wheels, tires, and hydrophobic sealant.",
+        "features": [
+          "Two-bucket wash & foam pre-soak",
+          "Iron & clay decontamination",
+          "Wheel face, barrels & calipers",
+          "Tire scrub + satin dressing"
+        ]
+      },
+      "interior": {
+        "title": "Interior Detailing",
+        "description": "Deep interior reset with steam sanitation and leather nutrition.",
+        "features": [
+          "HEPA vacuum & crevice detailing",
+          "Steam sanitize high-touch points",
+          "Leather clean + conditioner",
+          "Textile extraction & odor neutralize"
+        ]
+      },
+      "engine": {
+        "title": "Engine Bay Cleaning",
+        "description": "Safe degrease, dress, and protect under-hood surfaces.",
+        "features": [
+          "Low-pressure rinse & degrease",
+          "Brush agitation on plastics & rubbers",
+          "Detail dressing with satin finish",
+          "Battery & sensitive areas protected"
+        ]
+      },
+      "paint": {
+        "title": "Paint Correction",
+        "description": "Single or multi-stage correction for clarity and depth.",
+        "features": [
+          "Paint gauge + lighting inspection",
+          "Compounding & polishing as needed",
+          "Edge and PPF safe techniques",
+          "Solvent wipe & sealant lock-in"
+        ]
+      },
+      "ceramic": {
+        "title": "Ceramic Coating",
+        "description": "Professional-grade coatings for paint, wheels, glass, and interior.",
+        "features": [
+          "Gtechniq/CSL-grade coatings",
+          "Wheel faces & barrels coated",
+          "Glass hydrophobics",
+          "Interior textiles & leather guard"
+        ]
+      },
+      "headlight": {
+        "title": "Headlight Restoration",
+        "description": "Refinish and UV lock for crystal-clear optics.",
+        "features": [
+          "Multi-step sanding & refinement",
+          "Machine polish to clarity",
+          "UV sealant or coating",
+          "Moisture and haze removal"
+        ]
+      },
+      "full": {
+        "title": "Full Detail Packages",
+        "description": "Comprehensive interior + exterior + protection in one visit.",
+        "features": [
+          "Interior deep clean & protect",
+          "Exterior decon & seal",
+          "Glass clarity treatment",
+          "Wheel & tire renewal"
+        ]
+      }
+    },
+    "cta": "Explore services"
+  },
+  "pricing": {
+    "title": "Transparent pricing",
+    "subtitle": "Sized for every platform with concierge options.",
+    "cta": "Book now",
+    "cards": {
+      "sedan": {
+        "label": "Sedan",
+        "price": "$199",
+        "duration": "2-3 hrs",
+        "frequency": "Quarterly recommended",
+        "features": [
+          "Exterior wash + decon",
+          "Interior reset",
+          "Hydrophobic seal",
+          "Glass clarity"
+        ]
+      },
+      "suv": {
+        "label": "SUV",
+        "price": "$249",
+        "duration": "3-4 hrs",
+        "frequency": "Bi-monthly recommended",
+        "features": [
+          "Wheel & tire deep clean",
+          "Cargo area detail",
+          "Plastic restoration",
+          "Interior steam"
+        ]
+      },
+      "pickup": {
+        "label": "Pickup Truck",
+        "price": "$279",
+        "duration": "3-4 hrs",
+        "frequency": "Bi-monthly recommended",
+        "features": [
+          "Bed rinse & dress",
+          "Underbody rinse",
+          "Trim UV guard",
+          "Sealant upgrade"
+        ]
+      },
+      "luxury": {
+        "label": "Luxury / Exotic",
+        "price": "$349",
+        "duration": "4-5 hrs",
+        "frequency": "Monthly concierge",
+        "features": [
+          "Soft media only",
+          "Dedicated towels",
+          "PPF/Carbon safe",
+          "Priority scheduling"
+        ]
+      }
+    },
+    "addons": {
+      "title": "Add-ons",
+      "items": [
+        "Ceramic coating upgrades",
+        "Ozone odor neutralization",
+        "Pet hair intensive removal",
+        "Mat extraction & protection",
+        "Wheel-off decontamination"
+      ]
+    }
+  },
+  "brands": {
+    "title": "Products we trust",
+    "subtitle": "Only tier-one chemistry and tools touch your vehicle.",
+    "items": {
+      "meguiars": "Meguiar’s",
+      "chemical": "Chemical Guys",
+      "turtle": "Turtle Wax",
+      "threeM": "3M",
+      "griots": "Griot’s Garage"
+    }
+  },
+  "gallery": {
+    "title": "Before & after",
+    "subtitle": "High-contrast restorations and deep gloss transformations.",
+    "beforeLabel": "Before",
+    "afterLabel": "After",
+    "hoverHint": "Tap or hover to reveal",
+    "items": {
+      "beforeAfter1": "Gloss revival",
+      "beforeAfter2": "Interior reset",
+      "beforeAfter3": "Engine clarity",
+      "beforeAfter4": "Wheel perfection",
+      "beforeAfter5": "Headlight clarity",
+      "beforeAfter6": "Ceramic finish"
+    }
+  },
+  "reviews": {
+    "title": "Client stories",
+    "subtitle": "Private clientele, proven results.",
+    "items": {
+      "r1": {
+        "name": "Daniel M.",
+        "car": "Porsche 911 Turbo S",
+        "quote": "Showroom reflections without fillers—true correction."
+      },
+      "r2": {
+        "name": "Andrea L.",
+        "car": "Range Rover Autobiography",
+        "quote": "Interior smells factory-new and seats feel nourished, not greasy."
+      },
+      "r3": {
+        "name": "Chris P.",
+        "car": "Tesla Model S",
+        "quote": "Zero swirls, zero holograms. Loved the transparent inspection report."
+      },
+      "r4": {
+        "name": "María G.",
+        "car": "BMW X7",
+        "quote": "Ceramic is slick, water flies off at highway speeds. Great communication."
+      },
+      "r5": {
+        "name": "Javier R.",
+        "car": "Ferrari F8 Tributo",
+        "quote": "White-glove pickup, PPF-safe wash, and deep gloss—worth every penny."
+      },
+      "r6": {
+        "name": "Sofia T.",
+        "car": "Mercedes G63",
+        "quote": "They protected every trim piece and the satin finish looks perfect."
+      }
+    }
+  },
+  "specs": {
+    "title": "Vehicle coverage",
+    "subtitle": "Tailored techniques for every platform we detail.",
+    "items": {
+      "sedan": "Sedans",
+      "suv": "SUVs",
+      "pickup": "Pickups",
+      "luxury": "Luxury & Exotics",
+      "moto": "Motorcycles"
+    }
+  },
+  "videos": {
+    "title": "Motion proof",
+    "subtitle": "",
+    "items": {
+      "v1": "Studio finish walkthrough",
+      "v2": "Ceramic coating water behavior",
+      "v3": "Interior detox process"
+    }
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Your most common questions answered with clarity.",
+    "items": {
+      "booking": {
+        "q": "How do I book and what areas do you serve?",
+        "a": "Use the booking form with your location. We serve the metro area and offer pickup for garage-kept vehicles."
+      },
+      "prep": {
+        "q": "Do I need to prepare the vehicle?",
+        "a": "Remove personal items where possible. We handle the rest, including protective coverings for sensitive components."
+      },
+      "payment": {
+        "q": "What payment methods do you accept?",
+        "a": "Major cards, contactless, and invoicing for fleet/concierge clients. Deposits may apply for ceramic work."
+      },
+      "ceramic": {
+        "q": "How long do ceramic coatings last?",
+        "a": "Our coatings range from 2-5 years with proper maintenance. We provide a maintenance guide and optional refresh plans."
+      },
+      "mobile": {
+        "q": "Do you need power or water for mobile visits?",
+        "a": "We bring our own filtered water and power. A safe, flat workspace is all we need."
+      },
+      "warranty": {
+        "q": "Is there any warranty?",
+        "a": "Correction and coatings include documented inspection and cure checks. We stand behind workmanship with a satisfaction guarantee."
+      }
+    }
+  },
+  "contact": {
+    "title": "Book your detail",
+    "subtitle": "Tell us about your vehicle and goals. We respond quickly with a tailored plan.",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "service": "Service interest",
+      "message": "Vehicle details, goals, timeline",
+      "submit": "Send request",
+      "success": "We received your request. Expect a concierge reply shortly."
+    },
+    "whatsapp": "WhatsApp",
+    "call": "Call",
+    "hours": "Operating hours",
+    "hoursValue": "Mon-Sat · 8a – 7p"
+  },
+  "footer": {
+    "copyright": "©2025 Black Label Detailing. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}
