@@ -77,7 +77,9 @@ export function Gallery() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.04 }}
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/0 to-white/5 p-4 cursor-pointer select-none touch-pan-y"
-              ref={(el) => (cardRefs.current[id] = el)}
+              ref={(el) => {
+                cardRefs.current[id] = el;
+              }}
               onMouseEnter={() => setHoveredId(id)}
               onMouseLeave={() => {
                 setHoveredId(null);
