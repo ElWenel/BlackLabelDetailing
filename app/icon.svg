@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Black Label Detailing</title>
+  <desc id="desc">Rounded emoji-style B on dark background.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#11131a" />
+      <stop offset="100%" stop-color="#050608" />
+    </linearGradient>
+    <linearGradient id="bGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4f6fb" />
+      <stop offset="100%" stop-color="#c7ccd6" />
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bg)" />
+  <rect x="6" y="6" width="52" height="52" rx="12" fill="#1e212a" stroke="#2f333d" stroke-width="2" />
+  <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle"
+    font-family="'Segoe UI Emoji','Segoe UI Symbol','Apple Color Emoji',sans-serif"
+    font-size="34" font-weight="800" fill="url(#bGrad)" stroke="#e5e8ef" stroke-width="0.8" paint-order="stroke">
+    B
+  </text>
+</svg>
