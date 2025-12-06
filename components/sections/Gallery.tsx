@@ -87,15 +87,13 @@ export function Gallery() {
                 cardRefs.current[id] = el;
               }}
               onMouseEnter={() => setHoveredId(id)}
-                onMouseLeave={() => {
-                  setHoveredId(null);
-                  if (!draggingId) setSplits((prev) => ({ ...prev, [id]: 62 }));
-                <div
-                  className={`pointer-events-none absolute inset-0 overflow-hidden rounded-xl ${
-                    draggingId === id ? "" : "transition-[width] duration-150 ease-out"
-                  }`}
-                  style={{ width: `${isActive && !draggingId ? 18 : split}%` }}
-                >
+              onMouseLeave={() => {
+                setHoveredId(null);
+                if (!draggingId) setSplits((prev) => ({ ...prev, [id]: 62 }));
+              }}
+              onFocus={() => setHoveredId(id)}
+              onBlur={() => setHoveredId(null)}
+              onPointerDown={(e) => {
                 setDraggingId(id);
                 updateSplitFromEvent(id, e.clientX);
                 e.currentTarget.setPointerCapture(e.pointerId);
@@ -105,12 +103,6 @@ export function Gallery() {
                   updateSplitFromEvent(id, e.clientX);
                 }
               }}
-                  <div
-                    className="absolute right-[-12px] top-1/2 h-8 w-8 -translate-y-1/2 rounded-full border border-white/25 bg-black/60 shadow-lg backdrop-blur-sm"
-                    style={{ touchAction: "none" }}
-                  >
-                    <div className="absolute left-1/2 top-1/2 h-0.5 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/85" />
-                  </div>
               onPointerUp={(e) => {
                 if (draggingId === id) {
                   setDraggingId(null);
@@ -135,7 +127,11 @@ export function Gallery() {
                 />
 
                 <div
-                  className="pointer-events-none absolute inset-0 overflow-hidden rounded-xl transition-[width] duration-200 ease-out"
+                  className={`pointer-events-none absolute inset-0 overflow-hidden rounded-xl ${
+                    draggingId === id
+                      ? ""
+                      : "transition-[width] duration-150 ease-out"
+                  }`}
                   style={{ width: `${isActive && !draggingId ? 18 : split}%` }}
                 >
                   <Image
@@ -147,6 +143,12 @@ export function Gallery() {
                     priority={index < 2}
                   />
                   <div className="absolute inset-y-0 right-0 w-[2px] bg-white/70 shadow-[0_0_16px_rgba(0,0,0,0.45)]" />
+                  <div
+                    className="absolute right-[-12px] top-1/2 h-8 w-8 -translate-y-1/2 rounded-full border border-white/25 bg-black/60 shadow-lg backdrop-blur-sm"
+                    style={{ touchAction: "none" }}
+                  >
+                    <div className="absolute left-1/2 top-1/2 h-0.5 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/85" />
+                  </div>
                   <div className="absolute left-3 top-3 rounded-full bg-black/65 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-white">
                     {t("beforeLabel")}
                   </div>
