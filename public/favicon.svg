@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Black Label Detailing</title>
+  <desc id="desc">Monogram icon with dark background and silver initials.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#cfd4dd" stop-opacity="0.85"/>
+      <stop offset="35%" stop-color="#8e94a0" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#050608" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#050608"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#g)"/>
+  <path fill="none" stroke="#e5e7eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+    d="M22 18h10c5.5 0 10 4.5 10 10s-4.5 10-10 10H22V18zm0 20h11c6 0 11 4.5 11 10.5 0 5.5-5 9.5-11 9.5H22V38zm20-14h10"/>
+</svg>
