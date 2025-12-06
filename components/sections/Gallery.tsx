@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { galleryIds } from "@/lib/content";
 import { SectionHeader } from "./SectionHeader";
 
@@ -42,6 +42,23 @@ export function Gallery() {
   const [hoveredId, setHoveredId] = useState<
     (typeof galleryIds)[number] | null
   >(null);
+  const [splits, setSplits] = useState<Record<string, number>>(() =>
+    Object.fromEntries(galleryIds.map((id) => [id, 62]))
+  );
+  const [draggingId, setDraggingId] = useState<string | null>(null);
+  const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  const updateSplitFromEvent = (
+    id: string,
+    clientX: number,
+    bounds?: DOMRect
+  ) => {
+    const rect = bounds || cardRefs.current[id]?.getBoundingClientRect();
+    if (!rect) return;
+    const relative = ((clientX - rect.left) / rect.width) * 100;
+    const clamped = Math.min(90, Math.max(10, relative));
+    setSplits((prev) => ({ ...prev, [id]: clamped }));
+  };
 
   return (
     <section id="gallery" className="mx-auto max-w-screen-xl px-6 py-16">
@@ -50,6 +67,7 @@ export function Gallery() {
         {galleryIds.map((id, index) => {
           const media = galleryMedia[id];
           const isActive = hoveredId === id;
+          const split = splits[id] ?? 62;
 
           return (
             <motion.div
@@ -58,14 +76,37 @@ export function Gallery() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.04 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/0 to-white/5 p-4 cursor-pointer select-none touch-manipulation"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/0 to-white/5 p-4 cursor-pointer select-none touch-pan-y"
+              ref={(el) => (cardRefs.current[id] = el)}
               onMouseEnter={() => setHoveredId(id)}
-              onMouseLeave={() => setHoveredId(null)}
+              onMouseLeave={() => {
+                setHoveredId(null);
+                if (!draggingId) setSplits((prev) => ({ ...prev, [id]: 62 }));
+              }}
               onFocus={() => setHoveredId(id)}
               onBlur={() => setHoveredId(null)}
-              onClick={() =>
-                setHoveredId((current) => (current === id ? null : id))
-              }
+              onPointerDown={(e) => {
+                setDraggingId(id);
+                updateSplitFromEvent(id, e.clientX);
+                e.currentTarget.setPointerCapture(e.pointerId);
+              }}
+              onPointerMove={(e) => {
+                if (draggingId === id) {
+                  updateSplitFromEvent(id, e.clientX);
+                }
+              }}
+              onPointerUp={(e) => {
+                if (draggingId === id) {
+                  setDraggingId(null);
+                  e.currentTarget.releasePointerCapture(e.pointerId);
+                }
+              }}
+              onPointerCancel={(e) => {
+                if (draggingId === id) {
+                  setDraggingId(null);
+                  e.currentTarget.releasePointerCapture(e.pointerId);
+                }
+              }}
             >
               <div className="relative aspect-video overflow-hidden rounded-xl bg-gray-900/60">
                 <Image
@@ -78,9 +119,8 @@ export function Gallery() {
                 />
 
                 <div
-                  className={`pointer-events-none absolute inset-0 overflow-hidden rounded-xl transition-all duration-700 ease-out ${
-                    isActive ? "w-[16%]" : "w-[62%]"
-                  }`}
+                  className="pointer-events-none absolute inset-0 overflow-hidden rounded-xl transition-[width] duration-200 ease-out"
+                  style={{ width: `${isActive && !draggingId ? 18 : split}%` }}
                 >
                   <Image
                     src={media.before}

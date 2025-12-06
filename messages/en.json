@@ -196,7 +196,7 @@
     "subtitle": "High-contrast restorations and deep gloss transformations.",
     "beforeLabel": "Before",
     "afterLabel": "After",
-    "hoverHint": "Tap or hover to reveal",
+    "hoverHint": "Tap or drag to reveal",
     "items": {
       "beforeAfter1": "Gloss revival",
       "beforeAfter2": "Interior reset",

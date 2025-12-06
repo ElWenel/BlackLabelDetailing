@@ -196,7 +196,7 @@
     "subtitle": "Restauraciones de alto contraste y brillo profundo.",
     "beforeLabel": "Antes",
     "afterLabel": "Después",
-    "hoverHint": "Toca o pasa el cursor",
+    "hoverHint": "Toca o desliza",
     "items": {
       "beforeAfter1": "Revival de brillo",
       "beforeAfter2": "Reinicio interior",
