@@ -47,6 +47,7 @@ export function Gallery() {
   );
   const [draggingId, setDraggingId] = useState<string | null>(null);
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const dragFrame = useRef<number | null>(null);
 
   const updateSplitFromEvent = (
     id: string,
@@ -57,7 +58,12 @@ export function Gallery() {
     if (!rect) return;
     const relative = ((clientX - rect.left) / rect.width) * 100;
     const clamped = Math.min(90, Math.max(10, relative));
-    setSplits((prev) => ({ ...prev, [id]: clamped }));
+
+    if (dragFrame.current) cancelAnimationFrame(dragFrame.current);
+    dragFrame.current = requestAnimationFrame(() => {
+      setSplits((prev) => ({ ...prev, [id]: clamped }));
+      dragFrame.current = null;
+    });
   };
 
   return (
@@ -81,13 +87,15 @@ export function Gallery() {
                 cardRefs.current[id] = el;
               }}
               onMouseEnter={() => setHoveredId(id)}
-              onMouseLeave={() => {
-                setHoveredId(null);
-                if (!draggingId) setSplits((prev) => ({ ...prev, [id]: 62 }));
-              }}
-              onFocus={() => setHoveredId(id)}
-              onBlur={() => setHoveredId(null)}
-              onPointerDown={(e) => {
+                onMouseLeave={() => {
+                  setHoveredId(null);
+                  if (!draggingId) setSplits((prev) => ({ ...prev, [id]: 62 }));
+                <div
+                  className={`pointer-events-none absolute inset-0 overflow-hidden rounded-xl ${
+                    draggingId === id ? "" : "transition-[width] duration-150 ease-out"
+                  }`}
+                  style={{ width: `${isActive && !draggingId ? 18 : split}%` }}
+                >
                 setDraggingId(id);
                 updateSplitFromEvent(id, e.clientX);
                 e.currentTarget.setPointerCapture(e.pointerId);
@@ -97,6 +105,12 @@ export function Gallery() {
                   updateSplitFromEvent(id, e.clientX);
                 }
               }}
+                  <div
+                    className="absolute right-[-12px] top-1/2 h-8 w-8 -translate-y-1/2 rounded-full border border-white/25 bg-black/60 shadow-lg backdrop-blur-sm"
+                    style={{ touchAction: "none" }}
+                  >
+                    <div className="absolute left-1/2 top-1/2 h-0.5 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/85" />
+                  </div>
               onPointerUp={(e) => {
                 if (draggingId === id) {
                   setDraggingId(null);
