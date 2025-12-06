@@ -9,6 +9,10 @@ import "@/app/globals.css";
 export const metadata: Metadata = {
   title: "Black Label Auto Detailing",
   description: "Luxury mobile and studio auto detailing",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
 };
 
 export default async function LocaleLayout({
