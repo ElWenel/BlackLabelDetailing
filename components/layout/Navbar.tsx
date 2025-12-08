@@ -40,12 +40,17 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/5 bg-black/60 backdrop-blur-xl">
       <div className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-4">
-        <Link
-          href={`/${locale}`}
-          className="font-display text-lg tracking-tight text-white"
-        >
-          Black Label Detailing
-        </Link>
+        <div className="flex flex-col gap-1">
+          <span className="text-[11px] uppercase tracking-[0.2em] text-white/45">
+            Un trabajo hecho por CodeKey Solutions
+          </span>
+          <Link
+            href={`/${locale}`}
+            className="font-display text-lg tracking-tight text-white"
+          >
+            Black Label Detailing
+          </Link>
+        </div>
         <nav className="hidden items-center gap-6 md:flex">{navLinks}</nav>
         <div className="flex items-center gap-3">
           <Link
